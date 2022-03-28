@@ -17,7 +17,7 @@ after_success:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 # Take those images and push them to docker hub
 
--docker push sagar/multi-react
--docker push sagar/multi-nginx
--docker push sagar/multi-server
--docker push sagar/multi-worker
+- docker push sagar/multi-react
+- docker push sagar/multi-nginx
+- docker push sagar/multi-server
+- docker push sagar/multi-worker
