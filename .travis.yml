@@ -18,6 +18,7 @@ after_success:
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
+  - docker tag sagar098/multi-client sagar098/multi-client
   - docker push sagar098/multi-client
   - docker push sagar098/multi-nginx
   - docker push sagar098/multi-server
