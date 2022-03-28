@@ -11,14 +11,14 @@ script:
   - docker run -e CI=true sagar/react-test npm test
 
 after_success:
-  - docker build -t sagar/multi-client ./client
-  - docker build -t sagar/multi-nginx ./nginx
-  - docker build -t sagar/multi-server ./server
-  - docker build -t sagar/multi-worker ./worker
+  - docker build -t sagar098/multi-client ./client
+  - docker build -t sagar098/multi-nginx ./nginx
+  - docker build -t sagar098/multi-server ./server
+  - docker build -t sagar098/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push sagar/multi-client
-  - docker push sagar/multi-nginx
-  - docker push sagar/multi-server
-  - docker push sagar/multi-worker
+  - docker push sagar098/multi-client
+  - docker push sagar098/multi-nginx
+  - docker push sagar098/multi-server
+  - docker push sagar098/multi-worker
