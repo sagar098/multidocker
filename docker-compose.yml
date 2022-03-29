@@ -28,13 +28,13 @@ services:
       context: ./nginx
     ports:
       - '4000:80'
-  clientapp:
+  client:
     build: 
       dockerfile: Dockerfile.dev
-      context:  ./clientapp
+      context:  ./client
     volumes:
       - /app/node_modules
-      - ./clientapp:/app
+      - ./client:/app
   worker:
     build: 
       dockerfile: Dockerfile.dev
